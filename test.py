@@ -1,4 +1,6 @@
-# 05.02
+# 05.03
 n = int(input())
-for i in range(10**n - 1, 10**(n-1) - 1, -2):
-    print(i, end=' ')
+s = 0
+for i in range(n + 1):
+    s += i**2
+print(s)
