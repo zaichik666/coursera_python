@@ -1,6 +1,8 @@
-# 05.03
+# 05.04
 n = int(input())
-s = 0
-for i in range(n + 1):
-    s += i**2
-print(s)
+print('+___ ' * n)
+for i in range(n):
+    print('|', i + 1, ' / ', sep='', end='')
+print()
+print('|__\ '*n)
+print('|    '*n)
