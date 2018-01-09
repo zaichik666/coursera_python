@@ -1,13 +1,9 @@
-#05.13
-def IsAscending(A):
-    i = 1
-    length = len(A)
-    while (i < length) and (A[i - 1] < A[i]):
-        i += 1
-    n = i // length
-    n1 = abs(n - 1)
-    print('YES' * n, 'NO' * n1, sep='')
-
-
+#05.14
 numList = list(map(int, input().split()))
-IsAscending(numList)
+ans = 0
+for item in numList:
+    if item % 2 == 1 and ans == 0:
+        ans = item
+    elif item % 2 == 1 and item < ans:
+        ans = item
+print(ans)
