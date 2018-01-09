@@ -1,11 +1,7 @@
-# 05.09
-n = int(input())
-value = 0
-for i in range(1, n + 1):
-    if i == 1:
-        s = 1
-        value = 1
-    else:
-        s = s * i
-        value += s
-print(value)
+#05.11
+numList = list(map(int, input().split()))
+n = 0
+for i in numList:
+    if i > 0:
+        n += 1
+print(n)
