@@ -1,9 +1,7 @@
-#05.14
-numList = list(map(int, input().split()))
-ans = 0
-for item in numList:
-    if item % 2 == 1 and ans == 0:
-        ans = item
-    elif item % 2 == 1 and item < ans:
-        ans = item
-print(ans)
+#05.15
+nList = list(map(int, input().split()))
+n = int(input())
+i = 0
+while i < len(nList) and n <= nList[i]:
+    i += 1
+print(i + 1)
