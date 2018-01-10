@@ -1,7 +1,13 @@
-#05.15
-nList = list(map(int, input().split()))
-n = int(input())
+#05.16
+a = list(map(int, input().split()))
+b = []
 i = 0
-while i < len(nList) and n <= nList[i]:
-    i += 1
-print(i + 1)
+while i < len(a):
+    if i + 1 < len(a):
+        b.append(a[i+1])
+        b.append(a[i])
+
+    else:
+        b.append(a[i])
+    i += 2
+print(*b)
