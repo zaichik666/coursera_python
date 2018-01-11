@@ -1,6 +1,18 @@
-#05.17
-a = list(map(int, input().split()))
-i = len(a) - 1
-b = [a[i]]
-b.extend(a[:i])
-print(*b)
+#05.18
+nList = list(map(int, input().split()))
+a = b = c = d = 0
+for n in nList:
+    if n >= a:
+        b = a
+        a = n
+    if n < a and n > b:
+        b = n
+    if n <= c:
+        d = c
+        c = n
+    if n > c and n < d:
+        d = n
+if a * b > c * d:
+    print(b, a)
+else:
+    print(c, d)
