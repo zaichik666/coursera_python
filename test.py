@@ -1,25 +1,21 @@
-#05.19
-nList = list(map(int, input().split()))
-min1 = min2 = 0
-max0 = max1 = max2 = -30000
-for n in nList:
-    if n >= max0:
-        max2 = max1
-        max1 = max0
-        max0 = n
-    if n < max0 and n >= max1:
-        max2 = max1
-        max1 = n
-    if n < max1 and n > max2:
-        max2 = n
-    if n <= min1:
-        min2 = min1
-        min1 = n
-    if n > min1 and n < min2:
-        min2 = n
-if max0 == 0:
-    print(max1, min1, max0)
-elif max0 * max1 * max2 > max0 * min1 * min2:
-    print(max1, max2, max0)
-else:
-    print(min1, min2, max0)
+#05.21
+i = 0
+ans = 'NO'
+tmpDown = []
+tmpUp = []
+Vertical = [1, 2, 3, 4, 5, 6, 7, 8]
+Horizontal = [1, 2, 3, 4, 5, 6, 7, 8]
+while i < 8:
+    x, y = tuple(map(int, input().split()))
+    y0_Down = y + x
+    y0_Up = y - x
+    if tmpDown.count(y0_Down) == 0 and tmpUp.count(y0_Up) == 0:
+        tmpDown.append(y0_Down)
+        tmpUp.append(y0_Up)
+    if Vertical.count(x) != 0 and Horizontal.count(y) != 0:
+        Vertical.remove(x)
+        Horizontal.remove(y)
+    else:
+        ans == 'YES'
+    i += 1
+print(ans)
