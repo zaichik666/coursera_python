@@ -1,21 +1,20 @@
-#06.01
-def merge(A, B):
+#06.02
+def Intersection(A, B):
     i = j = 0
     C = []
     while i < len(A) and j < len(B):
-        if A[i] <= B[j]:
+        if A[i] < B[j]:
+            i += 1
+        elif B[j] < A[i]:
+            j += 1
+        elif A[i] == B[j]:
             C.append(A[i])
             i += 1
-        else:
-            C.append(B[j])
             j += 1
-    if i < len(A):
-        C.extend(A[i:len(A)])
-    if j < len(B):
-        C.extend(B[j:len(B)])
     return C
+
 
 a = list(map(int, input().split()))
 b = list(map(int, input().split()))
-c = merge(a, b)
+c = Intersection(a, b)
 print(*c)
