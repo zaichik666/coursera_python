@@ -1,23 +1,21 @@
-#05.22
-i = 0
-ans = 'NO'
-tmpDown = []
-tmpUp = []
-Vertical = []
-Horizontal = []
-while i < 8:
-    x, y = tuple(map(int, input().split()))
-    if Vertical.count(x) == 0 and Horizontal.count(y) == 0:
-        Vertical.append(x)
-        Horizontal.append(y)
-    else:
-        ans = 'YES'
-    y0_Down = y + x
-    y0_Up = y - x
-    if tmpDown.count(y0_Down) == 0 and tmpUp.count(y0_Up) == 0:
-        tmpDown.append(y0_Down)
-        tmpUp.append(y0_Up)
-    else:
-        ans = 'YES'
-    i += 1
-print(ans)
+#06.01
+def merge(A, B):
+    i = j = 0
+    C = []
+    while i < len(A) and j < len(B):
+        if A[i] <= B[j]:
+            C.append(A[i])
+            i += 1
+        else:
+            C.append(B[j])
+            j += 1
+    if i < len(A):
+        C.extend(A[i:len(A)])
+    if j < len(B):
+        C.extend(B[j:len(B)])
+    return C
+
+a = list(map(int, input().split()))
+b = list(map(int, input().split()))
+c = merge(a, b)
+print(*c)
