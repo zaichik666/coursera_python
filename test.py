@@ -1,12 +1,6 @@
-inFile = open('input.txt', 'r', encoding='utf8')
-outFile = open('output.txt', 'w', encoding='utf8')
-res = []
-for line in inFile:
-    tmpLine = line.split()
-    if len(tmpLine) != 0:
-        res.append((tmpLine[0], tmpLine[1], tmpLine[3]))
-res.sort()
-for line in res:
-    print(*line, file=outFile)
-inFile.close()
-outFile.close()
+nums = list(map(int, input().split()))
+res = [0] * 101
+for num in nums:
+    res[num] += 1
+for nowRes in range(101):
+    print((str(nowRes) + ' ') * res[nowRes], end='')
