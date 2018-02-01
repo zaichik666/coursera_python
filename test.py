@@ -1,14 +1,12 @@
-#06.04
-S, N = tuple(map(int, input().split()))
-b = []
-for i in range(N):
-    el = int(input())
-    b.append(el)
-b.sort()
-ans = 0
-b_sum = 0
-for i in range(N):
-    b_sum += b[i]
-    if b_sum <= S:
-        ans += 1
-print(ans)
+inFile = open('input.txt', 'r', encoding='utf8')
+outFile = open('output.txt', 'w', encoding='utf8')
+res = []
+for line in inFile:
+    tmpLine = line.split()
+    if len(tmpLine) != 0:
+        res.append((tmpLine[0], tmpLine[1], tmpLine[3]))
+res.sort()
+for line in res:
+    print(*line, file=outFile)
+inFile.close()
+outFile.close()
